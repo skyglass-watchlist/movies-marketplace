@@ -1,4 +1,4 @@
-def imageName = 'mlabouardy/movies-marketplace'
+def imageName = 'skyglass/movies-marketplace'
 def registry = 'https://registry.slowcoder.com'
 
 node('workers'){

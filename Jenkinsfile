@@ -10,7 +10,7 @@ node('workers'){
 
     stage('Quality Tests'){
         imageTest.inside('-u root:root'){
-            sh "npm run build"
+            sh "npm run install"
             sh "npm run lint"
         }
     }

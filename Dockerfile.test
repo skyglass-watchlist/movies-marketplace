@@ -11,4 +11,6 @@ COPY package.json .
 
 RUN npm i && npm i -g @angular/cli
 
+RUN ng add @angular-eslint/schematics
+
 COPY . .

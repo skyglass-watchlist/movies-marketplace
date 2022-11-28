@@ -10,6 +10,7 @@ node('workers'){
 
     stage('Quality Tests'){
         imageTest.inside('-u root:root'){
+            sh 'ng add @angular-eslint/schematics'
             sh "npm run lint"
         }
     }

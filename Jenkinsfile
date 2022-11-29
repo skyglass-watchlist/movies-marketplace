@@ -10,7 +10,7 @@ node('workers'){
 
     stage('Quality Tests'){
         imageTest.inside('-u root:root'){
-            sh 'ng add @angular-eslint/schematics'
+            sh 'ng add @angular-eslint/schematics --skip-confirmation'
             sh "npm run lint"
         }
     }

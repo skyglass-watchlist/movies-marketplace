@@ -10,6 +10,7 @@ node('workers'){
 
     stage('Quality Tests'){
         imageTest.inside {
+            sh "npm install --save-dev @angular-devkit/build-angular"
             sh "npm run lint"
         }
     }

@@ -1,6 +1,7 @@
 FROM node:14.0.0
 
 ENV CHROME_BIN=chromium
+ENV NPM_CONFIG_CACHE="${WORKSPACE}/.npm"
 
 WORKDIR /app
 

@@ -1,5 +1,5 @@
-def imageName = 'mlabouardy/movies-marketplace'
-def registry = 'https://registry.slowcoder.com'
+def imageName = 'skyglass/movies-marketplace'
+def registry = 'https://registry.hub.docker.com'
 
 node('workers'){
     stage('Checkout'){
@@ -9,7 +9,7 @@ node('workers'){
     def imageTest= docker.build("${imageName}-test", "-f Dockerfile.test .")
 
     stage('Quality Tests'){
-        sh "docker run --rm ${imageName}-test npm run lint"
+        sh "docker run --rm ${imageName}-test npm run lint debug-logger"
     }
 
     stage('Unit Tests'){
@@ -29,7 +29,7 @@ node('workers'){
     }
 
     stage('Push'){
-        docker.withRegistry(registry, 'registry') {
+        docker.withRegistry(registry, 'dockerHubCredentials') {
             docker.image(imageName).push(commitID())
 
             if (env.BRANCH_NAME == 'develop') {

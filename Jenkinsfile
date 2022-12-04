@@ -8,12 +8,6 @@ node('workers'){
 
     def imageTest= docker.build("${imageName}-test", "-f Dockerfile.test .")
 
-    stage('Quality Tests'){
-        imageTest.inside {
-            sh "npm run lint"
-        }
-    }
-
     stage('Unit Tests'){
         sh "docker run --rm -v $PWD/coverage:/app/coverage ${imageName}-test npm run test"
         publishHTML (target: [

@@ -7,6 +7,7 @@
     "build": "ng build",   
     "test": "ng test --browsers=ChromeHeadlessCI --code-coverage=true",
     "lint": "ng lint",
+    "update": "ng update",
     "e2e": "ng e2e"
   },
   "private": true,

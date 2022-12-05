@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiURL: 'http://localhost:3000',
+  apiURL: 'https://api.sandbox.greeta.net',
 };

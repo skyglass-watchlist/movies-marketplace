@@ -1,5 +1,5 @@
 export const environment = {
     production: false,
-    apiURL: '',
+    apiURL: 'https://api.staging.greeta.net',
   };
   
